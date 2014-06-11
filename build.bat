@@ -94,9 +94,9 @@ REM Static Release version
 cd tmp_openssl\openssl*
 
 if %COMPILER_VER% == "6" (
-perl Configure VC-WIN32 no-asm -DOPENSSL_USE_IPV6=0 --prefix=openssl-release-static
+perl Configure VC-WIN32 no-asm enable-rfc3779 -DOPENSSL_USE_IPV6=0 --prefix=openssl-release-static
 ) else (
-perl Configure VC-WIN32 no-asm --prefix=openssl-release-static
+perl Configure VC-WIN32 no-asm enable-rfc3779 --prefix=openssl-release-static
 )
 
 call ms\do_ms.bat
@@ -115,9 +115,9 @@ REM DLL Release version
 cd tmp_openssl\openssl*
 
 if %COMPILER_VER% == "6" (
-perl Configure VC-WIN32 no-asm enable-static-engine -DOPENSSL_USE_IPV6=0 --prefix=openssl-release-dll
+perl Configure VC-WIN32 no-asm enable-rfc3779 enable-static-engine -DOPENSSL_USE_IPV6=0 --prefix=openssl-release-dll
 ) else (
-perl Configure VC-WIN32 no-asm enable-static-engine --prefix=openssl-release-dll
+perl Configure VC-WIN32 no-asm enable-rfc3779 enable-static-engine --prefix=openssl-release-dll
 )
 
 call ms\do_ms.bat
@@ -136,9 +136,9 @@ REM Static Debug version
 cd tmp_openssl\openssl*
 
 if %COMPILER_VER% == "6" (
-perl Configure debug-VC-WIN32 no-asm -DOPENSSL_USE_IPV6=0 --prefix=openssl-debug-static
+perl Configure debug-VC-WIN32 no-asm enable-rfc3779 -DOPENSSL_USE_IPV6=0 --prefix=openssl-debug-static
 ) else (
-perl Configure debug-VC-WIN32 no-asm --prefix=openssl-debug-static
+perl Configure debug-VC-WIN32 no-asm enable-rfc3779 --prefix=openssl-debug-static
 )
 
 call ms\do_ms.bat
@@ -156,9 +156,9 @@ REM DLL Debug version
 cd tmp_openssl\openssl*
 
 if %COMPILER_VER% == "6" (
-perl Configure debug-VC-WIN32 no-asm enable-static-engine -DOPENSSL_USE_IPV6=0 --prefix=openssl-debug-dll
+perl Configure debug-VC-WIN32 no-asm enable-rfc3779 enable-static-engine -DOPENSSL_USE_IPV6=0 --prefix=openssl-debug-dll
 ) else (
-perl Configure debug-VC-WIN32 no-asm enable-static-engine --prefix=openssl-debug-dll
+perl Configure debug-VC-WIN32 no-asm enable-rfc3779 enable-static-engine --prefix=openssl-debug-dll
 )
 
 call ms\do_ms.bat
