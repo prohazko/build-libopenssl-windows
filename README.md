@@ -1,4 +1,4 @@
-Auto download & compile openssl
+Auto download & compile openssl with GOST cryptography support
 -----------
 
 This batch script will automatically download the latest openssl source code and build it using Visual Studio compiler.
